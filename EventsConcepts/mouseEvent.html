@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseEvent</title>
+</head>
+
+<body>
+    <h1 onmousedown="funDown()" onmouseup="funUp()">Checking Mouse Event Up vs Down</h1>
+    <script>
+        function funDown() {
+            console.log("Down Called First")
+        }
+        function funUp() {
+            console.log("Up Called First")
+        }
+    </script>
+</body>
+
+</html>

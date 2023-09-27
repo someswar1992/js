@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascipt Module</h1>
+    <!-- Before module system, we must remember order of including js files otherwise we will get error -->
+
+    <!--Telling to Js about variable  -->
+    <script src="./beforeModule/first.js"></script>
+
+    <!-- Telling to Js About function declaration, in which we are using first.js file variable -->
+    <script src="./beforeModule/second.js"></script>
+
+    <!-- Telling to Js call the function as we already tells to var,function declaration so here we dont get error  -->
+    <script src="./beforeModule/third.js"></script>
+
+    <!-- When we use modules, we have to use one more attribute type so Js will understand this source file work on module wise -->
+
+    <script type="module" src="./moduleWise.js"></script>
+
+</body>
+</html>

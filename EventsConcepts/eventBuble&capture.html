@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="eventBuble&capture.js"></script>
+    <style>
+        div{
+            border: 2px black solid;
+            min-height: 100px;
+            min-width: 100px;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bubbling</h1> 
+    <div id="grandParent">grandParent
+        <div id="parent">parent
+            <div id="child">child</div>
+        </div>
+    </div>
+
+    <h1>Event Capturing</h1>
+    <div id="grandParent-cap">grandParent
+        <div id="parent-cap">parent
+            <div id="child-cap">child</div>
+        </div>
+    </div>
+
+    <h1>Event Capturing & Bubbling</h1>
+    <div id="grandParent-mix">grandParent
+        <div id="parent-mix">parent
+            <div id="child-mix">child</div>
+        </div>
+    </div>
+    
+    <div id="grandParent-m">grandParent
+        <div id="parent-m">parent
+            <div id="child-m">child</div>
+        </div>
+    </div>
+</body>
+</html>

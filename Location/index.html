@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+</head>
+
+<body>
+    <h1>Getting Location</h1>
+    <button onclick="getLocation()">Click to eee your location</button>
+    <script>
+
+        function getLocation() {
+            // navigator.geolocation Returns Geolaction Object that have many methods
+            if (navigator.geolocation)
+                /* One of the method is getCurrentPosition, That takes three callback function
+                getCurrentPosition(success_callback,,err_success_callback,__option)*/
+                navigator.geolocation.getCurrentPosition((success_callback) => {
+                    console.log(success_callback)
+                    let lat = success_callback.coords.latitude
+                    let long = success_callback.coords.longitude
+                    console.log(lat, long)
+                    getPositionName(lat, long).then((res) => {
+                        console.log(res.address.city, res.address.country)
+                    })
+
+                }, (err_success_callback) => {
+                    console.log(err_success_callback)
+                    if (err_success_callback.code === 1) {
+                        alert(err_success_callback.message)
+                    }
+                })
+            else {
+                alert("Geolocation not supported by your Browser")
+            }
+        }
+
+        async function getPositionName(lat, long) {
+
+            let res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${long}&format=json`)
+            console.log(res)
+            let data = await res.json()
+            console.log(data)
+            console.log(data.address.city, data.address.country)
+            return data
+        }
+    </script>
+</body>
+
+</html>
