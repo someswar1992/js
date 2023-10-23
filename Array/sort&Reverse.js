@@ -18,6 +18,7 @@ number.forEach((number) => {
 
 //array.sort(compareFn)
 let sort = number.sort((a, b) => {
+    console.log(a,b)
     if (a < b) return -1 // "a" comes before "b"
     else if (a > b) return 1 // "b" comes before "a"
     else return 0 //nothing to change
@@ -36,3 +37,26 @@ arrString.sort((a, b) => {
     return (a > b) - (a < b)
 })
 console.log(arrString)
+
+// Sort Manually
+let arr = [1,2,19,39,3,5]
+for(let i=0;i<arr.length;i++){
+    for(let j=0;j<arr.length;j++){
+if(arr[i]<arr[j]){
+    temp= arr[i];
+    arr[i] = arr[j]
+    arr[j] = temp
+}
+    }
+}
+
+console.log(arr)
+
+let largest = 0
+for(i=0;i<arr.length;i++){
+    
+    if(arr[i]> largest)
+{
+    largest = arr[i]
+}}
+console.log(largest)

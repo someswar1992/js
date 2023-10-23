@@ -49,3 +49,13 @@ let a = 20;
   console.log(a);
 }
 console.log(a);
+
+
+function demo(){
+  var a =20;
+  let d;
+  console.log(a)
+  var a =40
+  console.log(a) 
+}
+demo()

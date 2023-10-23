@@ -26,6 +26,33 @@ for (let i = 0; i < l; i++) {
     }
 }
 
+
+
+
+// Duplicate Value Removal
+let arrWithDuplicate = [4, 2, 5, 1, 6, 5,2, 8];
+let arrDistinctValue = []
+arrWithDuplicate.forEach((element,index)=>{
+    if(arrDistinctValue.indexOf(element) === -1){
+        arrDistinctValue.push(element)
+    }
+})
+
+console.log(arrDistinctValue)
+
+
+// Number of Occurence of an element
+let ocuurenceArray = []
+let element =2
+let id = arrWithDuplicate.indexOf(element)
+while(id != -1){
+ocuurenceArray.push(id)
+id = arrWithDuplicate.indexOf(element,id+1)
+} 
+console.log(ocuurenceArray)
+
+
+
 // using Object we can also, as we know object key's can't be duplicate
 let array = [1, 2, 5, 2, 1, 8];
 let obj = {}
